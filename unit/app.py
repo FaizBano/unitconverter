@@ -2,22 +2,22 @@ import streamlit as st
 from PIL import Image
 import time
 
+# Set page title (must be the first Streamlit command)
+st.set_page_config(page_title="Unit Converter", page_icon="🔄")
+
 def main():
-    # Set page title
-    st.set_page_config(page_title="Unit Converter", page_icon="🔄")
-    
     # Layout for image and introduction
     col1, col2 = st.columns([1, 2])
     
     with col1:
-        image = Image.open("images/unit.png")  # Ensure you have an image in your working directory
+        image = Image.open("images/unit.png")  
         st.image(image, caption="Unit Converter", width=200)
     
     with col2:
         intro_placeholder = st.empty()
         for opacity in range(0, 11):
             intro_placeholder.markdown(f"""
-            <h1 style='color: #ff5733; text-align: left; opacity: {opacity /12};'>Welcome to the Unit Converter! 🌟</h2>
+            <h2 style='color: #ff5733; text-align: center; opacity: {opacity / 10};'>Welcome to the Unit Converter! 🌟</h2>
             Easily convert between different units of measurement with just a few clicks.<br>
             Select a category and enter the values to get instant results.
             """, unsafe_allow_html=True)
